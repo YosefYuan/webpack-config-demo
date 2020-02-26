@@ -1,7 +1,8 @@
-// import _ from 'lodash';
-import './comp/test';
-
-console.log(_.join(['hello world!', 'lodash'], '-'));
-// console.log('我是index  js', IS_DEV, number);
-console.log(process.env.NODE_ENV);
-console.log(process.env.NODE_ENV1);
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-CN');
+console.log(
+  moment()
+    .subtract(6, 'days')
+    .calendar()
+);

@@ -66,6 +66,7 @@ module.exports = {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         NODE_ENV1: JSON.stringify(process.env.NODE_ENV1)
       }
-    })
+    }),
+    new webpack.IgnorePlugin(/\.\/locale/, /moment/)
   ]
 };
