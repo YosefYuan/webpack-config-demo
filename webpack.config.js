@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -18,13 +19,13 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: require.resolve('lodash'),
-        use: {
-          loader: 'expose-loader',
-          options: '_'
-        }
-      },
+      // {
+      //   test: require.resolve('lodash'),
+      //   use: {
+      //     loader: 'expose-loader',
+      //     options: '_'
+      //   }
+      // },
       {
         test: /\.(htm|html)$/,
         loader: 'html-withimg-loader'
@@ -54,6 +55,9 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.ProvidePlugin({
+      _: 'lodash'
+    })
   ]
 };
