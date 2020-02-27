@@ -1,4 +1,10 @@
-import _ from 'lodash';
-import './comp/test';
+import one from './one';
+import two from './two';
 
-console.log(_.join(['hello world!', 'lodash'], '-'));
+const test = 'test';
+
+export default {
+  one,
+  two,
+  test
+};
